@@ -1,11 +1,10 @@
-import supertest from 'supertest';
-const request = supertest('https://gorest.co.in/public-api/');
+import request from "../config/common";
 import faker from 'faker';
 import { expect } from 'chai';
 
 const TOKEN = '23735529a2f083e71a06289906cc8873c65bec7e7779855f322830d95c511019';
 
-describe.skip('Users', () => {
+describe('Users', () => {
   let userId;
 
    describe('METHOD POST', ()=>{

@@ -19,7 +19,7 @@ describe('Users', () => {
     //       done();
     //     });
 //third option with 'return'
-    it.skip('GET /users', () => {
+    it('GET /users', () => {
         return request
             .get(`users?access-token=${TOKEN}`)
             .then(res => {
@@ -43,7 +43,7 @@ describe('Users', () => {
         });
     });
  //filter page =5, gender = Female, status= Active & adding const url
-    it.skip('GET /users with query params', () => {
+    it('GET /users with query params', () => {
         const url = `users/?access-token=${TOKEN} & page=5&gender=Female&status=Active`
         return request
             .get(url)
@@ -59,7 +59,7 @@ describe('Users', () => {
 
     describe('METHOD POST', ()=>{
 
-      it.skip('POST /users',  function () {
+      it('POST /users',  function () {
         const data ={
             email: faker.unique(faker.internet.email), //`test${Math.floor(Math.random()*9999)}@mail.com`
             name:faker.name.findName(),
@@ -86,9 +86,9 @@ describe('Users', () => {
        });
     });
 
-    describe('METHOD PUT', ()=>{
+    describe.skip('METHOD PUT', ()=>{
 
-        it.skip('PUT /users:id',   function () {
+        it('PUT /users:id',   function () {
             const data = {
                 email: faker.unique(faker.internet.email), //`test${Math.floor(Math.random()*9999)}@mail.com`
                 name: faker.name.findName(),
@@ -104,9 +104,9 @@ describe('Users', () => {
         });
     });
 
-    describe('METHOD DELETE', ()=>{
+    describe.skip('METHOD DELETE', ()=>{
 
-        it.skip('DELETE /users:id ', function () {
+        it('DELETE /users:id ', function () {
             return request
                 .delete ('users/7')
                 .set("Authorization",`Bearer ${TOKEN}`)
