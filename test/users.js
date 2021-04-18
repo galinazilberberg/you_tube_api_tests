@@ -19,7 +19,7 @@ describe('Users', () => {
     //       done();
     //     });
 //third option with 'return'
-    it('GET /users', () => {
+    it.skip('GET /users', () => {
         return request
             .get(`users?access-token=${TOKEN}`)
             .then(res => {
@@ -27,7 +27,7 @@ describe('Users', () => {
         });
     });
 //check if user with id exist
-    it('GET /users/:id', () => {
+    it.skip('GET /users/:id', () => {
         return request
             .get(`users/354?access-token=${TOKEN}`)
             .then(res => {
@@ -35,7 +35,7 @@ describe('Users', () => {
         });
     });
 //check if user 354 exists
-    it('GET /users/:id', () => {
+    it.skip('GET /users/:id', () => {
         return request
             .get(`users/354?access-token=${TOKEN}`)
             .then(res => {
@@ -43,7 +43,7 @@ describe('Users', () => {
         });
     });
  //filter page =5, gender = Female, status= Active & adding const url
-    it('GET /users with query params', () => {
+    it.skip('GET /users with query params', () => {
         const url = `users/?access-token=${TOKEN} & page=5&gender=Female&status=Active`
         return request
             .get(url)
@@ -59,7 +59,7 @@ describe('Users', () => {
 
     describe('METHOD POST', ()=>{
 
-      it('POST /users',  function () {
+      it.skip('POST /users',  function () {
         const data ={
             email: faker.unique(faker.internet.email), //`test${Math.floor(Math.random()*9999)}@mail.com`
             name:faker.name.findName(),
@@ -88,7 +88,7 @@ describe('Users', () => {
 
     describe('METHOD PUT', ()=>{
 
-        it('PUT /users:id',   function () {
+        it.skip('PUT /users:id',   function () {
             const data = {
                 email: faker.unique(faker.internet.email), //`test${Math.floor(Math.random()*9999)}@mail.com`
                 name: faker.name.findName(),
@@ -106,7 +106,7 @@ describe('Users', () => {
 
     describe('METHOD DELETE', ()=>{
 
-        it.only('DELETE /users:id ', function () {
+        it.skip('DELETE /users:id ', function () {
             return request
                 .delete ('users/7')
                 .set("Authorization",`Bearer ${TOKEN}`)
